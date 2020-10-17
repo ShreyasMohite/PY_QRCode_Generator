@@ -13,6 +13,21 @@ class qrcode:
 
         save=StringVar()
 
+    #===============================================================================#
+        def on_enter1(e):
+            but_clear['background']="black"
+            but_clear['foreground']="cyan"  
+        def on_leave1(e):
+            but_clear['background']="SystemButtonFace"
+            but_clear['foreground']="SystemButtonText"
+
+        def on_enter2(e):
+            but_genarate['background']="black"
+            but_genarate['foreground']="cyan"  
+        def on_leave2(e):
+            but_genarate['background']="SystemButtonFace"
+            but_genarate['foreground']="SystemButtonText"
+
 
     #============================command=============================================#
         
@@ -61,10 +76,14 @@ class qrcode:
 
         but_clear=Button(secondframe,text="Clear",width=20,font=('times new roman',12,'bold'),cursor="hand2",command=clear)
         but_clear.place(x=40,y=30)
+        but_clear.bind("<Enter>",on_enter1)
+        but_clear.bind("<Leave>",on_leave1)
 
 
         but_genarate=Button(secondframe,text="Generate QR Code",width=20,font=('times new roman',12,'bold'),cursor="hand2",command=genrate)
         but_genarate.place(x=250,y=30)
+        but_genarate.bind("<Enter>",on_enter2)
+        but_genarate.bind("<Leave>",on_leave2)
 
     #===================================================================================#
 
